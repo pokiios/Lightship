@@ -31,6 +31,11 @@ uniform float height_scale = 0.15;
 uniform float beers_law = 2.0;
 uniform float depth_offset = -0.75;
 
+// edge
+uniform float edge_scale = 0.1;
+uniform float near = 1.0;
+uniform float far = 100.0;
+
 // Varying variables (wtf is this)
 varying float height;
 varying vec3 world_position;
@@ -47,18 +52,30 @@ float fresnel(float amount, vec3 normal, vec3 view)
 	return pow((1.0 - clamp(dot(normalize(normal), normalize(view)), 0.0, 1.0)), amount);
 }
 
+float edge(float depth)
+{
+	depth = 1.0 - 2.0 * depth;
+	return near * far / (far + depth * (near - far));
+}
 void fragment() {
+	// detecting depth through depth texture and screen UV
 	float depth_texture = texture(DEPTH_TEXTURE, SCREEN_UV).r * 2.0 - 1.0;
 	float depth = PROJECTION_MATRIX[3][2] / (depth_texture + PROJECTION_MATRIX[2][2]);
 	float depth_blend = exp((depth+VERTEX.z + depth_offset) * -beers_law); 
 	depth_blend = clamp(1.0 - depth_blend, 0.0, 1.0);
 	float depth_blend_power = clamp(pow(depth_blend, 2.5), 0.0, 1.0);
 	
+	// adding depth colour
 	vec3 screen_color = textureLod(SCREEN_TEXTURE, SCREEN_UV, depth_blend_power * 2.5).rgb;
 	vec3 depth_blend_color = mix(color.rgb, depth_color.rgb, depth_blend_power);
 	vec3 color_blend = mix(screen_color * depth_color.rgb, depth_color.rgb * 0.25, depth_blend_power * 0.5);
 	
+	// edge depth calculations
+	float z_depth = edge(texture(DEPTH_TEXTURE, SCREEN_UV).x);
+	float z_pos = edge(FRAGCOORD.z);
+	float z_dif = z_depth - z_pos;
 	
+	// moving normal map with time
 	vec2 time = (TIME * wave_direction) * time_scale;
 	vec2 time2 = (TIME * wave_direction2) * time_scale;
 	vec3 normal_blend = mix(texture(normal_1,world_position.xz + time).rgb, texture(normal_2,UV + time2).rgb, 0.5);
@@ -66,9 +83,12 @@ void fragment() {
 	float fresnel = fresnel(5.0, NORMAL, VIEW);
 	vec3 surface_color = mix(color.rgb, fresnel_color.rgb, fresnel);
 	
+	vec3 depth_color_adj = mix(foam_color.rgb, color_blend.rgb, step(edge_scale, z_dif));
+	
 	// Set attributes
+	ALBEDO = clamp(surface_color + depth_color_adj, vec3(0.0), vec3(1.0));
 	NORMAL_MAP = normal_blend;
 	METALLIC = metallic;
 	ROUGHNESS = roughness;
-	ALBEDO = mix(surface_color, color_blend, 0.75);
+
 }
