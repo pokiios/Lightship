@@ -49,13 +49,13 @@ shader_parameter/noise_scale = 10.0
 shader_parameter/height_scale = 0.5
 shader_parameter/beers_law = 2.0
 shader_parameter/depth_offset = 1.5
-shader_parameter/edge_scale = 1.0
+shader_parameter/edge_scale = 0.1
 shader_parameter/near = 1.0
-shader_parameter/far = 100.0
+shader_parameter/far = 200.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3xd07"]
 material = SubResource("ShaderMaterial_46yoo")
-size = Vector2(20, 20)
+size = Vector2(70, 70)
 subdivide_width = 20
 subdivide_depth = 20
 
