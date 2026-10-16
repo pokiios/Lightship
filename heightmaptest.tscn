@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c2bi5y85pssjw"]
+
+[ext_resource type="Shader" uid="uid://nus18tdl8f60" path="res://heightmapping.gdshader" id="1_jvgc5"]
+[ext_resource type="Texture2D" uid="uid://ssjg3nnapeo3" path="res://heightmap5.png" id="2_ekwdx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
+size = Vector2(70, 70)
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ns0st"]
+render_priority = 0
+shader = ExtResource("1_jvgc5")
+shader_parameter/heightmap_texture = ExtResource("2_ekwdx")
+shader_parameter/height_scale = 4.0
+shader_parameter/texture_albedo = ExtResource("2_ekwdx")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+
+[node name="Node3D" type="Node3D" unique_id=580111024]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1487780863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07618427, -1.8666816, 0.89819145)
+mesh = SubResource("PlaneMesh_s1hdg")
+surface_material_override/0 = SubResource("ShaderMaterial_ns0st")
