@@ -2,9 +2,10 @@
 
 [ext_resource type="Shader" uid="uid://nus18tdl8f60" path="res://heightmapping.gdshader" id="1_jvgc5"]
 [ext_resource type="Texture2D" uid="uid://ssjg3nnapeo3" path="res://heightmap5.png" id="2_ekwdx"]
+[ext_resource type="Texture2D" uid="uid://b2j6j3v821kqb" path="res://map texture.png" id="3_ekwdx"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
-size = Vector2(70, 70)
+size = Vector2(150, 150)
 subdivide_width = 100
 subdivide_depth = 100
 
@@ -12,8 +13,8 @@ subdivide_depth = 100
 render_priority = 0
 shader = ExtResource("1_jvgc5")
 shader_parameter/heightmap_texture = ExtResource("2_ekwdx")
-shader_parameter/height_scale = 4.0
-shader_parameter/texture_albedo = ExtResource("2_ekwdx")
+shader_parameter/height_scale = 6.0
+shader_parameter/texture_albedo = ExtResource("3_ekwdx")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 
 [node name="Node3D" type="Node3D" unique_id=580111024]
