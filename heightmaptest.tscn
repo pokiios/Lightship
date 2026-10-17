@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://rrbbbl2framv" path="res://Scenes/PlayerBoat.tscn" id="5_2o1cc"]
 [ext_resource type="PackedScene" uid="uid://d1mceujuoakl6" path="res://NPCBoat.tscn" id="7_4ls13"]
 [ext_resource type="PackedScene" uid="uid://c0i40kue36cdh" path="res://Scenes/Port.tscn" id="8_vw57k"]
+[ext_resource type="PackedScene" uid="uid://cj21y76mwbekf" path="res://MapUI.tscn" id="9_4jpbd"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
 size = Vector2(150, 150)
@@ -31,6 +32,7 @@ map_data = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 size = Vector3(150, 1, 150)
 
 [node name="Node3D" type="Node3D" unique_id=580111024]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=419485767]
 
@@ -67,3 +69,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.891228, 2.0977554, -13.205
 
 [node name="Port" parent="." unique_id=1086956238 instance=ExtResource("8_vw57k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.538172, 2.1782618, 15.690294)
+
+[node name="Control" parent="." unique_id=1769657988 instance=ExtResource("9_4jpbd")]

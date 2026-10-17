@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cj21y76mwbekf"]
+
+[ext_resource type="Script" uid="uid://be57ry65x46f1" path="res://map_ui.gd" id="1_v40sx"]
+[ext_resource type="Texture2D" uid="uid://b2j6j3v821kqb" path="res://map texture.png" id="2_cdl4w"]
+[ext_resource type="Script" uid="uid://briykdbvgm5lh" path="res://Map_Drawing.gd" id="3_cdl4w"]
+
+[sub_resource type="Theme" id="Theme_s1hdg"]
+
+[node name="Control" type="Control" unique_id=1769657988]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v40sx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1942865896]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 59.0
+grow_horizontal = 0
+
+[node name="FoldableContainer" type="FoldableContainer" parent="VBoxContainer" unique_id=1310023115]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/FoldableContainer" unique_id=2009334646]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/FoldableContainer/HBoxContainer" unique_id=1211462462]
+layout_mode = 2
+theme = SubResource("Theme_s1hdg")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/FoldableContainer/HBoxContainer/PanelContainer" unique_id=1094080815]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/FoldableContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=938853310]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/FoldableContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1991219254]
+layout_mode = 2
+text = "Last Radio Message"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/FoldableContainer/HBoxContainer" unique_id=683575197]
+custom_maximum_size = Vector2(500, 500)
+layout_mode = 2
+texture = ExtResource("2_cdl4w")
+
+[node name="PlayerDot" type="ColorRect" parent="VBoxContainer/FoldableContainer/HBoxContainer/TextureRect" unique_id=2092828981]
+custom_maximum_size = Vector2(10, 10)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+color = Color(1, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/FoldableContainer/HBoxContainer/TextureRect" unique_id=1372317437]
+custom_maximum_size = Vector2(500, 500)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_cdl4w")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=100112780]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=1171803725]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=1795619976]
+layout_mode = 2
+text = "Press M For Map"
+
+[connection signal="mouse_entered" from="VBoxContainer/FoldableContainer/HBoxContainer/TextureRect/TextureRect" to="VBoxContainer/FoldableContainer/HBoxContainer/TextureRect/TextureRect" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/FoldableContainer/HBoxContainer/TextureRect/TextureRect" to="VBoxContainer/FoldableContainer/HBoxContainer/TextureRect/TextureRect" method="_on_mouse_exited"]
