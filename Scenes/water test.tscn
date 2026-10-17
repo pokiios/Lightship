@@ -55,7 +55,7 @@ shader_parameter/far = 200.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3xd07"]
 material = SubResource("ShaderMaterial_46yoo")
-size = Vector2(70, 70)
+size = Vector2(150, 150)
 subdivide_width = 20
 subdivide_depth = 20
 
