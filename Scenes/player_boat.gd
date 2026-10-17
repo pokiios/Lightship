@@ -39,8 +39,8 @@ func _physics_process(delta: float) -> void:
 #
 	#move_and_slide()
 	
-	var move_input = Input.get_axis('ui_down', 'ui_up')
-	var turn_input = Input.get_axis('ui_right','ui_left')
+	var move_input = Input.get_axis('Backward', 'Forward')
+	var turn_input = Input.get_axis('Right','Left')
 	
 	if move_input != 0:
 		current_speed = move_toward(current_speed, move_input*max_speed, acceleration*delta)
