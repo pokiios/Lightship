@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dm8cnxtxglcxn" path="res://heightmapCollision.gd" id="4_nv3yq"]
 [ext_resource type="PackedScene" uid="uid://mbx4h0vdsx7b" path="res://Scenes/water test.tscn" id="5_0pu5e"]
 [ext_resource type="PackedScene" uid="uid://rrbbbl2framv" path="res://Scenes/PlayerBoat.tscn" id="5_2o1cc"]
+[ext_resource type="PackedScene" uid="uid://d1mceujuoakl6" path="res://NPCBoat.tscn" id="7_4ls13"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
 size = Vector2(150, 150)
@@ -41,13 +42,13 @@ transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4
 shape = SubResource("HeightMapShape3D_nv3yq")
 script = ExtResource("4_nv3yq")
 
-[node name="RigidBody3D" parent="." unique_id=1058693561 instance=ExtResource("5_2o1cc")]
+[node name="PlayerBoat" parent="." unique_id=1058693561 instance=ExtResource("5_2o1cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.731613, 2.178546, 0)
 
 [node name="Water" parent="." unique_id=1503518473 instance=ExtResource("5_0pu5e")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Water" unique_id=29747675]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7978897, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.603199, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water/StaticBody3D" unique_id=1953145420]
 transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, 0.38, 0.14, 0.145)
@@ -59,3 +60,6 @@ light_energy = 0.559
 light_volumetric_fog_energy = 2.319
 shadow_enabled = true
 directional_shadow_mode = 0
+
+[node name="NPCBoat" parent="." unique_id=1250631048 instance=ExtResource("7_4ls13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.891228, 2.0977554, -13.205463)

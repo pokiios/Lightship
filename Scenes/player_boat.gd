@@ -1,3 +1,4 @@
+class_name PlayerBoat 
 extends CharacterBody3D
 
 
@@ -16,6 +17,7 @@ var current_speed = 0.0
 @export var bob_amount = 0.2
 @export var bob_speed = 1.2
 
+@onready var Booty = $BootyOfTheBoat
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
