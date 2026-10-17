@@ -1,6 +1,7 @@
 class_name Port 
 extends StaticBody3D
 
+@onready var Frontussy : Marker3D = $FrontussyOfThePort
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -66,4 +66,4 @@ directional_shadow_mode = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.891228, 2.0977554, -13.205463)
 
 [node name="Port" parent="." unique_id=1086956238 instance=ExtResource("8_vw57k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.538172, 1.6091576, 15.690294)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.538172, 2.1782618, 15.690294)

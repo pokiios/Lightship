@@ -12,7 +12,10 @@ var current_speed = 0.0
 
 
 var following : bool = false
+var porting : bool = false
+
 var player : PlayerBoat
+var port : Port
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +25,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	velocity = Vector3.ZERO
+	
 	if following:
 		if abs(global_position.distance_to(player.Booty.global_position)) > 2:
 			current_speed = move_toward(current_speed, max_speed, acceleration*delta)
@@ -32,6 +36,15 @@ func _process(delta: float) -> void:
 
 		look_at(player.global_position, Vector3.UP)
 
+	if porting:
+		if abs(global_position.distance_to(port.Frontussy.global_position)) > 2:
+			current_speed = move_toward(current_speed, max_speed, acceleration*delta)
+		else:
+			queue_free()
+		velocity = global_position.direction_to(port.Frontussy.global_position) * current_speed
+		
+
+		look_at(port.Frontussy.global_position, Vector3.UP)
 
 	bob_time += delta * bob_speed
 	#var bob_intensity = lerp(bob_amount, bob_amount*0.3, speed_ratio)
@@ -48,5 +61,7 @@ func _on_notice_zone_area_entered(area: Area3D) -> void:
 		following = true
 		player = area.get_parent()
 	elif area.get_parent() is Port:
-		queue_free()
+		following = false
+		porting = true
+		port = area.get_parent()
 	pass # Replace with function body.

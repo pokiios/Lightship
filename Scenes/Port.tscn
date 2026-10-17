@@ -5,10 +5,12 @@
 [sub_resource type="BoxMesh" id="BoxMesh_s1hdg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k17si"]
-radius = 3.118
+radius = 9.924
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ns0st"]
 size = Vector3(1, 0.99316406, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s1hdg"]
 
 [node name="StaticBody3D2" type="StaticBody3D" unique_id=1086956238]
 script = ExtResource("1_gk6tx")
@@ -26,3 +28,9 @@ debug_color = Color(0.991777, 0, 0.26719525, 0.41960785)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1867971829]
 transform = Transform3D(2.9445076, 0, 0, 0, 0.92773455, 0, 0, 0, 1.4850206, 0, 0.6146685, 0)
 shape = SubResource("BoxShape3D_ns0st")
+
+[node name="FrontussyOfThePort" type="Marker3D" parent="." unique_id=1333171657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6983128, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FrontussyOfThePort" unique_id=146709920]
+mesh = SubResource("SphereMesh_s1hdg")
