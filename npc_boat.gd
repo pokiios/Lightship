@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var bob_amount = 0.2
 @export var bob_speed = 1.2
 
-@export var max_speed = 10
+@export var max_speed = 20
 @export var acceleration = 2.0
 @export var deceleration = 3.5
 
