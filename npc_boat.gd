@@ -47,4 +47,6 @@ func _on_notice_zone_area_entered(area: Area3D) -> void:
 	if area.get_parent() is PlayerBoat:
 		following = true
 		player = area.get_parent()
+	elif area.get_parent() is Port:
+		queue_free()
 	pass # Replace with function body.

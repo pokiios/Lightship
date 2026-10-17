@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mbx4h0vdsx7b" path="res://Scenes/water test.tscn" id="5_0pu5e"]
 [ext_resource type="PackedScene" uid="uid://rrbbbl2framv" path="res://Scenes/PlayerBoat.tscn" id="5_2o1cc"]
 [ext_resource type="PackedScene" uid="uid://d1mceujuoakl6" path="res://NPCBoat.tscn" id="7_4ls13"]
+[ext_resource type="PackedScene" uid="uid://c0i40kue36cdh" path="res://Scenes/Port.tscn" id="8_vw57k"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
 size = Vector2(150, 150)
@@ -63,3 +64,6 @@ directional_shadow_mode = 0
 
 [node name="NPCBoat" parent="." unique_id=1250631048 instance=ExtResource("7_4ls13")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.891228, 2.0977554, -13.205463)
+
+[node name="Port" parent="." unique_id=1086956238 instance=ExtResource("8_vw57k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.538172, 1.6091576, 15.690294)
