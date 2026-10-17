@@ -2,9 +2,24 @@
 
 [ext_resource type="Theme" uid="uid://bt6x6kyoco414" path="res://Assets/UI/dialog_theme.tres" id="1_sqs0f"]
 [ext_resource type="Script" uid="uid://nu0mlboeirta" path="res://Scripts/dialog_box.gd" id="2_ccvmi"]
+[ext_resource type="AudioStream" uid="uid://bkib7vm6pvkqn" path="res://Audio/Character Noises/1.ogg" id="3_jr0x6"]
+[ext_resource type="AudioStream" uid="uid://hwa0ip8qohc4" path="res://Audio/Character Noises/2.ogg" id="4_hx8sq"]
+[ext_resource type="AudioStream" uid="uid://n7eif7e61ypc" path="res://Audio/Character Noises/3.ogg" id="5_4fq4f"]
+[ext_resource type="AudioStream" uid="uid://ctnpk3rrqydea" path="res://Audio/Character Noises/4.ogg" id="6_nbm07"]
+[ext_resource type="AudioStream" uid="uid://0sog4dhl6k6" path="res://Audio/Character Noises/5.ogg" id="7_dol32"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_riqys"]
 size = Vector2(800, 200)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bhunq"]
+random_pitch = 1.0293022
+random_volume_offset_db = 0.1
+streams_count = 5
+stream_0/stream = ExtResource("3_jr0x6")
+stream_1/stream = ExtResource("4_hx8sq")
+stream_2/stream = ExtResource("5_4fq4f")
+stream_3/stream = ExtResource("6_nbm07")
+stream_4/stream = ExtResource("7_dol32")
 
 [node name="Dialog Box" type="Control" unique_id=1960741140]
 custom_maximum_size = Vector2(800, 400)
@@ -25,6 +40,7 @@ size_flags_vertical = 8
 theme = ExtResource("1_sqs0f")
 script = ExtResource("2_ccvmi")
 character_time = 0.2
+dialog_bleeps_counter = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=495418320]
 layout_mode = 1
@@ -68,6 +84,7 @@ text = "test Name here"
 [node name="Dialog" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=349775973]
 unique_name_in_owner = true
 layout_mode = 2
+bbcode_enabled = true
 text = "this is a test dialog"
 fit_content = true
 
@@ -78,3 +95,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 10
 theme_override_font_sizes/font_size = 18
 text = "(Press space to Continue...)"
+
+[node name="CharacterAudio" type="AudioStreamPlayer2D" parent="." unique_id=376946558]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_bhunq")

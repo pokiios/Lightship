@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://n7eif7e61ypc"
+path="res://.godot/imported/3.ogg-f9dc8acf35b0cde64ddb4c67b438dc2e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Character Noises/3.ogg"
+dest_files=["res://.godot/imported/3.ogg-f9dc8acf35b0cde64ddb4c67b438dc2e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
