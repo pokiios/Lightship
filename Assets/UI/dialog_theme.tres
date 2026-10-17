@@ -1,3 +1,23 @@
 [gd_resource type="Theme" format=3 uid="uid://bt6x6kyoco414"]
 
+[ext_resource type="FontFile" uid="uid://ddff2lnypw7q6" path="res://Assets/UI/Wavehaus-95SemiBold.otf" id="1_ae4gy"]
+
 [resource]
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("1_ae4gy")
+HBoxContainer/constants/separation = 10
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_ae4gy")
+LineEdit/fonts/font = ExtResource("1_ae4gy")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+ProgressBar/fonts/font = ExtResource("1_ae4gy")
+RichTextLabel/font_sizes/bold_font_size = 20
+RichTextLabel/font_sizes/bold_italics_font_size = 20
+RichTextLabel/font_sizes/italics_font_size = 20
+RichTextLabel/font_sizes/mono_font_size = 20
+RichTextLabel/font_sizes/normal_font_size = 20
+TextEdit/font_sizes/font_size = 18
+TextEdit/fonts/font = ExtResource("1_ae4gy")
