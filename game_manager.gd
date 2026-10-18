@@ -12,7 +12,7 @@ func _ready() -> void:
 	for each in get_parent().get_children():
 		if each is PlayerBoat:
 			player = each
-	
+	timer_for_dialogue = Timer.new()
 	timer_for_dialogue.timeout.connect(new_radio_message)
 	pass # Replace with function body.
 
