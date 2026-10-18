@@ -5,8 +5,8 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-@export var max_speed = 15.0
-@export var acceleration = 2.0
+@export var max_speed = 5.0
+@export var acceleration = 1.5
 @export var deceleration = 1.5
 @export var max_turn_speed = 2.0
 @export var min_turn_speed = 0.3

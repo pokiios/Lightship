@@ -11,7 +11,7 @@ var has_message : bool = true
 var player : PlayerBoat 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	fold.folded = true
 	for child in get_parent().get_children():
 		if child is PlayerBoat:
 			player = child
@@ -35,8 +35,8 @@ func _process(delta: float) -> void:
 		var x = player.global_position.x+75
 		var z = player.global_position.z+75
 		
-		x = x/150 * 575
-		z = z/150 * 575
+		x = x/150 * 500
+		z = z/150 * 500
 		
 		player_dot.position = Vector2(x,z)
 	pass
