@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cj21y76mwbekf" path="res://MapUI.tscn" id="9_4jpbd"]
 [ext_resource type="Script" uid="uid://c3cif0nrq6a42" path="res://game_manager.gd" id="10_8grns"]
 [ext_resource type="PackedScene" uid="uid://cxxarlc7mcuyo" path="res://Scenes/dialog_box.tscn" id="11_fw5vh"]
+[ext_resource type="PackedScene" uid="uid://babwtek1mlcpi" path="res://FogWall.tscn" id="12_421wi"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
 size = Vector2(150, 150)
@@ -53,6 +54,8 @@ fog_density = 1.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0225
 volumetric_fog_albedo = Color(0.5057441, 0.66646725, 0.9829193, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_s1hdg"]
 
 [node name="Node3D" type="Node3D" unique_id=580111024]
 process_mode = 1
@@ -141,3 +144,36 @@ process_mode = 3
 
 [node name="Node3D" type="Node3D" parent="." unique_id=688406703]
 transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 16.891222, 1.911108, -13.205461)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=663304057]
+transform = Transform3D(-9.065032, -8.742275e-08, 3.8213705e-15, 0, -4.3711374e-08, -0.99999994, 7.9249025e-07, -0.9999997, 4.3711385e-08, 0, 0, 79.99998)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1047667848]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 5.1919518, -1.2216548)
+shape = SubResource("WorldBoundaryShape3D_s1hdg")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1184782667]
+transform = Transform3D(-3.9624504e-07, -0.9999996, 4.3711385e-08, 0, -4.371137e-08, -0.9999999, 9.06503, -4.371137e-08, 1.9106853e-15, 80, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=1931867069]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 5.1919518, -1.2216548)
+shape = SubResource("WorldBoundaryShape3D_s1hdg")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=1893755191]
+transform = Transform3D(-3.96245e-07, 0.99999946, -4.3711385e-08, 0, -4.3711363e-08, -0.9999999, -9.065029, -4.3711363e-08, 1.9106853e-15, -80, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" unique_id=678064306]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 5.1919518, -1.2216548)
+shape = SubResource("WorldBoundaryShape3D_s1hdg")
+
+[node name="Node3D2" parent="." unique_id=137864505 instance=ExtResource("12_421wi")]
+transform = Transform3D(0.99999964, 0, 0, 0, 1, 0, 0, 0, 0.99999964, 2.0000029, 25, -96.50485)
+
+[node name="Node3D3" parent="." unique_id=1606023935 instance=ExtResource("12_421wi")]
+transform = Transform3D(0.99999934, 0, 0, 0, 1, 0, 0, 0, 0.99999934, 4.000004, 14.208427, 97.047066)
+
+[node name="Node3D4" parent="." unique_id=1618017984 instance=ExtResource("12_421wi")]
+transform = Transform3D(-4.3711346e-08, 0, -0.9999992, 0, 1, 0, 0.9999992, 0, -4.3711346e-08, 93.29899, 25, -4.7203836)
+
+[node name="Node3D5" parent="." unique_id=38509295 instance=ExtResource("12_421wi")]
+transform = Transform3D(-4.371135e-08, 0, -0.99999917, 0, 1, 0, 0.99999917, 0, -4.371135e-08, -97.73974, 14.208427, 9.2498865)
