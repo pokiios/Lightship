@@ -11,7 +11,6 @@ extends CharacterBody3D
 
 var current_speed = 0.0
 
-
 var following : bool = false
 var porting : bool = false
 
@@ -20,7 +19,9 @@ var home_port_id : int
 var player : PlayerBoat
 var port : Port
 
+signal picked_up
 signal home_now
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -66,6 +67,8 @@ func _on_notice_zone_area_entered(area: Area3D) -> void:
 	if area.get_parent() is PlayerBoat:
 		following = true
 		player = area.get_parent()
+		picked_up.emit()
+		# Progress Dialog here
 	elif area.get_parent() is Port:
 		var porty := area.get_parent() as Port 
 		if porty.port_id == home_port_id:

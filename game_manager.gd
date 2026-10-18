@@ -45,6 +45,7 @@ func _ready() -> void:
 	timer_for_tut_delay.timeout.connect(on_tut_start)
 	timer_for_tut_delay.one_shot = true
 	timer_for_tut_delay.start(3)
+	
 
 	
 	pass # Replace with function body.
@@ -93,10 +94,15 @@ func spawn_boat(spawn_pos, home_port_id):
 	current_npc.global_position = spawn_pos.global_position
 	current_npc.home_port_id = home_port_id
 	current_npc.home_now.connect(on_current_boat_home)
+	current_npc.picked_up.connect(on_picked_up)
 	
 func on_current_boat_home():
 	timer_for_dialogue.start(randi_range(5,10))
 	pass 
+
+func on_picked_up():
+	%"Dialog Box".dialog_progression += 1
+	%"Dialog Box".open_dialog_screen()
 
 func new_radio_message():
 #her is where the code for new dialogue go

@@ -1,7 +1,5 @@
 extends Control
 
-signal is_dialog_open
-
 @export var character_time : float
 @onready var timer: Timer = %Timer
 
@@ -105,7 +103,7 @@ func dialog_tree(dialog_progression: int):
 		16:
 			dialog_end()
 			pass	
-		18:
+		17:
 			%Name.text = "Fishsquire"
 			%Dialog.text = "Hey… I ended up a little distracted by these really… really pretty merladies… I have no idea where I am to be honest?"
 			pass
@@ -120,178 +118,187 @@ func dialog_tree(dialog_progression: int):
 		20:
 			dialog_end()
 			pass
-		19: 
+		21: 
 			%Name.text = "Fishsquire"
 			%Dialog.text = "[wave]So... They weren't mermaids at all?... man... just to [b]Rich Port[/b] I guess...[/wave]"
 			pass
-		28:
+		22:
+			dialog_end()
+			pass
+		23:
 			%Name.text = "Filobena-Anne Schkrungle"
 			%Dialog.text = "Oh thank goodness you responded!"
 			pass
-		29:
+		24:
 			%Name.text = "Filobena-Anne Schkrungle"
 			%Dialog.text = "The customer service for these waters is absolutely ridiculous!"
 			pass
-		30:
+		25:
 			%Name.text = "Filobena-Anne Schkrungle"
 			%Dialog.text = "I’ve been stuck at this [i]tiny castle[/i] for [shake]10 minutes[/shake] now and nobody has come to get me!"
 			pass
-		31:
+		26:
 			%Name.text = "Filobena-Anne Schkrungle"
 			%Dialog.text = "You better be fast or I’ll be speaking to your supervisor!"
 			pass
-		32:
+		27:
 			dialog_end()
 			pass
-		31:
+		28:
 			%Name.text = "Filobena-Anne Schkrungle"
 			%Dialog.text = "You were... [wave]timely enough...[/wave] I suppose... To [b]Rich Port[/b], any time today please?"
 			pass
-		32:
+		29:
 			dialog_end()
 			pass
-		22:
+		30:
 			%Name.text = "Millermen"
 			%Dialog.text = "Good evening, it appears that we lost signal after trying to do some readings for the [i]windmills down south[/i], east of one of the castles."
 			pass
-		23:
+		31:
 			%Name.text = "Millermen"
 			%Dialog.text = "It’s been hard to navigate to any of the ports nearby so some assistance would be well appreciated."
 			pass
-		24:
+		32:
 			dialog_end()
 			pass
-		23:
+		33:
 			%Name.text = "Millermen"
 			%Dialog.text = "Much appreciated. We just need to head over to [b]Drowned Port.[/b]"
 			pass
-		24:
+		34:
 			dialog_end()
 			pass			
-		15:
+		35:
 			%Name.text = "William?"
 			%Dialog.text = "Ga ga ga ga… gaaaa. Aba ba ba ba."
 			pass
-		15:
+		36:
 			%Name.text = ""
 			%Dialog.text = "(It appears this person must have found the [i]Fountain of Youth[/i]...)"
 			pass
-		15:
+		37:
 			dialog_end()
 			pass
-		15:
+		38:
 			%Name.text = "William?"
 			%Dialog.text = "Gaa.. goo ga ga gwaaah ga ga!"
 			pass
-		15:
+		39:
 			%Name.text = ""
 			%Dialog.text = "(The baby seems to be pointing in the direction of [b]Port Done...[/b])"
 			pass
-		15:
+		40:
+			dialog_end()
+			pass
+		41:
 			%Name.text = "Squeeb"
 			%Dialog.text = "[shake]HELP![/shake]"
 			pass
-		16:
+		42:
 			%Name.text = "Squeeb"
 			%Dialog.text = "[shake][b]HELP MEEEEE!!![/b][/shake]"
 			pass
-		17:
+		43:
 			%Name.text = "Squeeb"
 			%Dialog.text = "[shake]HELP I GOT STUCK IN THAT [i]PORTA POTTY[/i] UP NORTH! I CAN'T GET MYSELF UNSTUCK![/shake]"
 			pass
-		18:
+		44:
 			%Name.text = "Squeeb"
 			%Dialog.text = "[shake]IT STINKS SO BAD![/shake]"
 			pass
-		19:
+		45:
 			%Name.text = "Squeeb"
 			%Dialog.text = "[shake][i]HEEEEEEEEEEEEEEEEEEEEEEEEEEEEELP–[/i][/shake]"
 			pass
-		20:
+		46:
 			%Name.text = ""
 			%Dialog.text = "(The line went cold...)"
 			pass
-		21:
+		47:
 			dialog_end()
 			pass
-		20:
+		48:
 			%Name.text = "Squeeb"
 			%Dialog.text = "THANK GOD YOU GOT ME! I’M GONNA BE LATE TO MY INTERVIEW. TO [b]PORT SMOKEY[b] [shake]NOW!!!![/shake]"
 			pass
-		33:
+		49:
+			dialog_end()
+			pass
+		50:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "Heeeeyyyyy~ So I think there’s some weird guy on the [i]trash island[/i] east of the beach."
 			pass
-		34:
+		51:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "I think he might be… stuck? He seems to be enjoying himself though."
 			pass
-		35:
+		52:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "He’s calling himself the king of the trash island?"
 			pass
-		36:
+		53:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "He’s like super loud."
 			pass
-		37:
+		54:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "Like..."
 			pass
-		38:
+		55:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "[i][b]Super Loud.[/b][/i]"
 			pass
-		39:
+		56:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "We had no idea what to do so like..."
 			pass
-		40:
+		57:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "Can you like help or something?"
 			pass
-		41:
+		58:
 			%Name.text = "Gariana Andy"
 			%Dialog.text = "K'thanks byeeeee~"
 			pass
-		42:
+		59:
 			dialog_end()
 			pass
-		41:
+		60:
 			%Name.text = "King of Trash Island"
 			%Dialog.text = "[tornado]Who told you you can disturb me here at my domicile! This is a free gaff![/tornado]"
 			pass
-		41:
+		61:
 			%Name.text = "King of Trash Island"
 			%Dialog.text = "[wave]I guess it’s… cold… if you can take me to [b]Port Done…[/b][/wave]"
 			pass
-		41:
+		62:
 			dialog_end()
 			pass
-		15:
+		63:
 			%Name.text = "Scotchman Barry (63)"
 			%Dialog.text = "Och ye finally answered! Was startin’ tae winder if the line was aff!"
 			pass
-		15:
+		64:
 			%Name.text = "Scotchman Barry (63)"
 			%Dialog.text = "Look our boat is like defo knackered, cannae get the thing tae run at ah!"
 			pass
-		15:
+		65:
 			%Name.text = "Scotchman Barry (63)"
 			%Dialog.text = "Can ye gie us a hand oot? Any help at ah would be grand. We’re doon sooth, at like a [i]huge castle[/i] like. Think I got a gander of a [i]shipwreck[/i] up north n' ah."
 			pass
-		15:
+		66:
 			%Name.text = "Scotchman Barry (63)"
 			%Dialog.text = "Cheers pal!"
 			pass
-		41:
+		67:
 			dialog_end()
 			pass
-		15:
+		68:
 			%Name.text = "Scotchman Barry (63)"
 			%Dialog.text = "Aye you found us lad! We just need tae get back tae [b]Port Smokey[/b] and we’re sorted!"
 			pass
-		43:
+		69:
 			total_dialog_end.emit()
 		_:
 			%Name.text = "Big Beautiful bouncin baby boy"
