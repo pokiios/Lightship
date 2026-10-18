@@ -2,14 +2,13 @@
 
 [ext_resource type="Theme" uid="uid://bt6x6kyoco414" path="res://Assets/UI/dialog_theme.tres" id="1_sqs0f"]
 [ext_resource type="Script" uid="uid://nu0mlboeirta" path="res://Scripts/dialog_box.gd" id="2_ccvmi"]
+[ext_resource type="Texture2D" uid="uid://c3dqoltsqmfkp" path="res://Assets/UI/UI_Panel.png" id="3_hx8sq"]
 [ext_resource type="AudioStream" uid="uid://bkib7vm6pvkqn" path="res://Audio/Character Noises/1.ogg" id="3_jr0x6"]
+[ext_resource type="Texture2D" uid="uid://bcsqao2vopg0" path="res://Assets/UI/UI_Panel_Border.png" id="4_4fq4f"]
 [ext_resource type="AudioStream" uid="uid://hwa0ip8qohc4" path="res://Audio/Character Noises/2.ogg" id="4_hx8sq"]
 [ext_resource type="AudioStream" uid="uid://n7eif7e61ypc" path="res://Audio/Character Noises/3.ogg" id="5_4fq4f"]
 [ext_resource type="AudioStream" uid="uid://ctnpk3rrqydea" path="res://Audio/Character Noises/4.ogg" id="6_nbm07"]
 [ext_resource type="AudioStream" uid="uid://0sog4dhl6k6" path="res://Audio/Character Noises/5.ogg" id="7_dol32"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_riqys"]
-size = Vector2(800, 200)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bhunq"]
 random_pitch = 1.0293022
@@ -22,79 +21,92 @@ stream_3/stream = ExtResource("6_nbm07")
 stream_4/stream = ExtResource("7_dol32")
 
 [node name="Dialog Box" type="Control" unique_id=1960741140]
-custom_maximum_size = Vector2(800, 400)
+custom_maximum_size = Vector2(1000, 600)
 propagate_maximum_size = true
 layout_mode = 3
-anchor_left = 0.155
-anchor_top = 0.68
-anchor_right = 0.846
-anchor_bottom = 0.97800004
-offset_left = 397.44
-offset_top = 207.35999
-offset_right = -398.59204
-offset_bottom = 14.255981
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_vertical = 4
 theme = ExtResource("1_sqs0f")
 script = ExtResource("2_ccvmi")
 character_time = 0.2
 dialog_bleeps_counter = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=495418320]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1235269978]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -410.0
-offset_top = -220.0
-offset_right = 410.0
+offset_left = -500.0
+offset_top = -600.0
+offset_right = 500.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_sqs0f")
+theme_override_constants/margin_bottom = -39
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1004178360]
+custom_minimum_size = Vector2(0, 220)
+custom_maximum_size = Vector2(710, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_riqys")
+texture = ExtResource("3_hx8sq")
+metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1869074846]
-layout_mode = 2
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/TextureRect" unique_id=1869074846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_sqs0f")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1059748805]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TextureRect/MarginContainer2" unique_id=1059748805]
 layout_mode = 2
 theme = ExtResource("1_sqs0f")
+alignment = 1
 
-[node name="Timer" type="Timer" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=194282549]
+[node name="Timer" type="Timer" parent="MarginContainer/TextureRect/MarginContainer2/VBoxContainer" unique_id=194282549]
 unique_name_in_owner = true
-wait_time = 0.009999999999999998
+wait_time = 0.00999999999999999
 autostart = true
 
-[node name="Name" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=417377196]
+[node name="Name" type="Label" parent="MarginContainer/TextureRect/MarginContainer2/VBoxContainer" unique_id=417377196]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_sqs0f")
 text = "test Name here"
 
-[node name="Dialog" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=349775973]
+[node name="Dialog" type="RichTextLabel" parent="MarginContainer/TextureRect/MarginContainer2/VBoxContainer" unique_id=349775973]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
 text = "this is a test dialog"
 fit_content = true
 
-[node name="Hint" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=770025200]
+[node name="Hint" type="Label" parent="MarginContainer/TextureRect/MarginContainer2/VBoxContainer" unique_id=770025200]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 10
 theme_override_font_sizes/font_size = 18
 text = "(Press space to Continue...)"
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer" unique_id=743550131]
+custom_maximum_size = Vector2(1200, 580)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_4fq4f")
 
 [node name="CharacterAudio" type="AudioStreamPlayer2D" parent="." unique_id=376946558]
 unique_name_in_owner = true
