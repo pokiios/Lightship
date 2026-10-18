@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://14o1pau86tbt"]
+
+[ext_resource type="Script" uid="uid://4piig8wh0nvb" path="res://Scripts/animated_button.gd" id="1_3p3dl"]
+
+[node name="PlayButton" type="Button" unique_id=1322973683]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "                "
+script = ExtResource("1_3p3dl")

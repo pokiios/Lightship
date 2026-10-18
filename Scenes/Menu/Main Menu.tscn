@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://iipicip4nqj"]
+
+[ext_resource type="Theme" uid="uid://bt6x6kyoco414" path="res://Assets/UI/dialog_theme.tres" id="1_y7nxq"]
+[ext_resource type="Script" uid="uid://6yeo4alf8o4" path="res://Scripts/main_menu.gd" id="2_vct2b"]
+[ext_resource type="PackedScene" uid="uid://c2bi5y85pssjw" path="res://heightmaptest.tscn" id="3_ebtur"]
+[ext_resource type="Texture2D" uid="uid://d2s75q8qin68s" path="res://Assets/TITLE_Lightship.png" id="3_krpjf"]
+[ext_resource type="Script" uid="uid://4piig8wh0nvb" path="res://Scripts/animated_button.gd" id="4_vct2b"]
+[ext_resource type="Shader" uid="uid://nus18tdl8f60" path="res://heightmapping.gdshader" id="6_o6bku"]
+[ext_resource type="Texture2D" uid="uid://ssjg3nnapeo3" path="res://heightmap5.png" id="7_dec1e"]
+[ext_resource type="Texture2D" uid="uid://b2j6j3v821kqb" path="res://map texture.png" id="8_3xqko"]
+[ext_resource type="PackedScene" uid="uid://b10navmhbvvrv" path="res://Scenes/Environment/waterMenu.tscn" id="9_5ltbu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
+size = Vector2(150, 150)
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ns0st"]
+render_priority = 0
+shader = ExtResource("6_o6bku")
+shader_parameter/heightmap_texture = ExtResource("7_dec1e")
+shader_parameter/height_scale = 6.0
+shader_parameter/texture_albedo = ExtResource("8_3xqko")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sn0t7"]
+sky_top_color = Color(0.064777434, 0.028599882, 0.07352159, 1)
+sky_horizon_color = Color(0.026187485, 0.051247917, 0.07077735, 1)
+ground_bottom_color = Color(0.043700762, 0.03613217, 0.056994125, 1)
+ground_horizon_color = Color(0.03160226, 0.033055317, 0.03607996, 1)
+
+[sub_resource type="Sky" id="Sky_riqys"]
+sky_material = SubResource("ProceduralSkyMaterial_sn0t7")
+
+[sub_resource type="Environment" id="Environment_bhunq"]
+background_mode = 2
+sky = SubResource("Sky_riqys")
+ambient_light_source = 3
+ambient_light_color = Color(0.03529412, 0.05882353, 0.07450981, 1)
+ambient_light_energy = 2.73
+fog_mode = 1
+fog_light_color = Color(0.29798084, 0.32557386, 0.3685061, 1)
+fog_light_energy = 0.14
+fog_sun_scatter = 0.06
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0345
+volumetric_fog_albedo = Color(0.6715141, 0.67151415, 0.6715141, 1)
+
+[node name="MainMenu" type="Control" unique_id=913901516]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_y7nxq")
+script = ExtResource("2_vct2b")
+scene = ExtResource("3_ebtur")
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=346256327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1987898658]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1764406528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.648403, 2.5591707, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1490562580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=514828403]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=225607163]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("3_krpjf")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=546244776]
+layout_mode = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=128334193]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "                "
+script = ExtResource("4_vct2b")
+play_states = "PLAY"
+metadata/_custom_type_script = "uid://4piig8wh0nvb"
+
+[node name="PlayBtnText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayButton" unique_id=621435793]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.14901961, 0.11764706, 0.06666667, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave]Play[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=754174692]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1496209880]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "                "
+script = ExtResource("4_vct2b")
+play_states = "QUIT"
+metadata/_custom_type_script = "uid://4piig8wh0nvb"
+
+[node name="QuitBtnText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/QuitButton" unique_id=981465605]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.14901961, 0.11764706, 0.06666667, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave amp=30 freq=5]Quit[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node3D" type="Node3D" parent="." unique_id=580111024]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1487780863]
+mesh = SubResource("PlaneMesh_s1hdg")
+surface_material_override/0 = SubResource("ShaderMaterial_ns0st")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D" unique_id=801563789]
+transform = Transform3D(1, 0, 0, 0, -0.9925889, 0.12152088, 0, -0.12152088, -0.9925889, 0, 23.59626, 0)
+light_color = Color(0.13007954, 0.22625211, 0.32129112, 1)
+light_energy = 2.291
+light_volumetric_fog_energy = 1.662
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="Water" parent="Node3D" unique_id=1503518473 instance=ExtResource("9_5ltbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0969524, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1994903435]
+environment = SubResource("Environment_bhunq")
+
+[connection signal="animation_finished" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_animation_finished"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="animation_finished" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_animation_finished"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

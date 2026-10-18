@@ -1,10 +1,41 @@
 [gd_resource type="Theme" format=3 uid="uid://bt6x6kyoco414"]
 
 [ext_resource type="FontFile" uid="uid://ddff2lnypw7q6" path="res://Assets/UI/Wavehaus-95SemiBold.otf" id="1_ae4gy"]
+[ext_resource type="Texture2D" uid="uid://cau80bigpv63y" path="res://Assets/UI/UI_Button_9_tile_hover.png" id="2_aueqj"]
+[ext_resource type="Texture2D" uid="uid://bsk7bovxegof6" path="res://Assets/UI/UI_Button_9_tile.png" id="3_s5bxa"]
+[ext_resource type="Texture2D" uid="uid://b03dlmeost2qc" path="res://Assets/UI/UI_Button_9_tile_clicked.png" id="4_upem3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jq8tk"]
+texture = ExtResource("2_aueqj")
+texture_margin_left = 17.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 17.0
+region_rect = Rect2(0, -1, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xd07"]
+texture = ExtResource("3_s5bxa")
+texture_margin_left = 17.0
+texture_margin_top = 17.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6fhyq"]
+texture = ExtResource("4_upem3")
+texture_margin_left = 17.0
+texture_margin_top = 17.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
 
 [resource]
-Button/font_sizes/font_size = 18
+Button/colors/font_color = Color(0.14901961, 0.11764706, 0.06666667, 1)
+Button/colors/font_hover_color = Color(1, 0.99215686, 0.94509804, 1)
+Button/colors/font_pressed_color = Color(1, 0.99215686, 0.94509804, 1)
+Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("1_ae4gy")
+Button/styles/hover = SubResource("StyleBoxTexture_jq8tk")
+Button/styles/normal = SubResource("StyleBoxTexture_3xd07")
+Button/styles/pressed = SubResource("StyleBoxTexture_6fhyq")
 HBoxContainer/constants/separation = 10
 Label/font_sizes/font_size = 24
 Label/fonts/font = ExtResource("1_ae4gy")
@@ -19,5 +50,10 @@ RichTextLabel/font_sizes/bold_italics_font_size = 20
 RichTextLabel/font_sizes/italics_font_size = 20
 RichTextLabel/font_sizes/mono_font_size = 20
 RichTextLabel/font_sizes/normal_font_size = 20
+RichTextLabel/fonts/bold_font = ExtResource("1_ae4gy")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_ae4gy")
+RichTextLabel/fonts/italics_font = ExtResource("1_ae4gy")
+RichTextLabel/fonts/mono_font = ExtResource("1_ae4gy")
+RichTextLabel/fonts/normal_font = ExtResource("1_ae4gy")
 TextEdit/font_sizes/font_size = 18
 TextEdit/fonts/font = ExtResource("1_ae4gy")

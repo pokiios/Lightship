@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b10navmhbvvrv"]
+
+[ext_resource type="Shader" uid="uid://dp64op64xuluy" path="res://Assets/Shaders/water_shader.gdshader" id="1_fka02"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_46yoo"]
+noise_type = 3
+frequency = 0.0052
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_827fx"]
+noise = SubResource("FastNoiseLite_46yoo")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_827fx"]
+noise_type = 3
+seed = 10
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_46yoo"]
+noise = SubResource("FastNoiseLite_827fx")
+seamless = true
+as_normal_map = true
+bump_strength = 5.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_visj6"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hneg8"]
+noise = SubResource("FastNoiseLite_visj6")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_46yoo"]
+render_priority = 0
+shader = ExtResource("1_fka02")
+shader_parameter/color = Color(0.09019608, 0.105882354, 0.24705882, 0.9098039)
+shader_parameter/fresnel_color = Color(0.13333334, 0.3372549, 0.65882355, 0.84705883)
+shader_parameter/depth_color = Color(0.07450981, 0.05882353, 0.101960786, 1)
+shader_parameter/foam_color = Color(1, 1, 1, 0.7294118)
+shader_parameter/normal_1 = SubResource("NoiseTexture2D_827fx")
+shader_parameter/normal_2 = SubResource("NoiseTexture2D_46yoo")
+shader_parameter/wave = SubResource("NoiseTexture2D_hneg8")
+shader_parameter/transparency = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/wave_direction = Vector2(1, 2)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.0249999994412
+shader_parameter/noise_scale = 50.0
+shader_parameter/height_scale = 2.0
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = 1.5
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 1.0
+shader_parameter/far = 200.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3xd07"]
+material = SubResource("ShaderMaterial_46yoo")
+size = Vector2(150, 150)
+subdivide_width = 20
+subdivide_depth = 20
+
+[node name="Water" type="Node3D" unique_id=1503518473]
+
+[node name="WaterMesh" type="MeshInstance3D" parent="." unique_id=1354438203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8682513, 0.02396965)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_3xd07")
