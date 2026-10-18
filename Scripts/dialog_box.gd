@@ -13,6 +13,7 @@ var characters_to_count : int = 0
 signal tut_wasd
 signal tut_map
 signal tut_done
+signal total_dialog_end
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -199,6 +200,8 @@ func dialog_tree(dialog_progression: int):
 			pass
 		42:
 			dialog_end()
+		43:
+			total_dialog_end.emit()
 		_:
 			%Name.text = "Big Beautiful bouncin baby boy"
 			%Dialog.text = " NO MORE GAME NOW BYE ! "

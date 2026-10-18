@@ -95,8 +95,8 @@ process_mode = 3
 [node name="GameManager" type="Node3D" parent="." unique_id=2115212441 node_paths=PackedStringArray("spawn_positions")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 16.891224, 1.911108, -13.2054615)
 script = ExtResource("10_8grns")
-spawn_positions = [NodePath("chip"), NodePath("manatee"), NodePath("tiny castle"), NodePath("windmills"), NodePath("foy"), NodePath("toilet"), NodePath("trash"), NodePath("big castle")]
-home_port_ids = Array[int]([2, 1, 1, 2, 0, 3, 0, 3])
+spawn_positions = [NodePath("chip"), NodePath("toilet"), NodePath("windmills"), NodePath("manatee"), NodePath("tiny castle"), NodePath("trash"), NodePath("foy"), NodePath("big castle")]
+home_port_ids = Array[int]([2, 3, 2, 1, 1, 0, 0, 3])
 dialog_ids = Array[int]([6, 10, 17, 20, 23, 28])
 npc_scene = ExtResource("7_4ls13")
 

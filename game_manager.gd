@@ -38,7 +38,7 @@ func _ready() -> void:
 	%"Dialog Box".tut_wasd.connect(tut_test_wasd)
 	%"Dialog Box".tut_map.connect(tut_test_map)
 	%"Dialog Box".tut_done.connect(tut_test_done)
-	
+	%"Dialog Box".total_dialog_end.connect(Game_Over)
 	
 	var timer_for_tut_delay = Timer.new()
 	self.add_child(timer_for_tut_delay)
@@ -123,3 +123,8 @@ func tut_test_map():
 func tut_test_done():
 	tut_don_bay = true
 	timer_for_dialogue.start(randi_range(5,10))
+	
+func Game_Over():
+	#TODO: Please put the scene switch to game over screen here please thank you leah
+	
+	pass
