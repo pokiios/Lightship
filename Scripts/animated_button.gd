@@ -12,7 +12,11 @@ class_name AnimatedButton
 @export var press_animation_length_1 : float = 0.1
 @export var press_animation_length_2 : float = 0.1
 
+@export_enum("PLAY", "QUIT") var play_states: String
+@export var main_game : PackedScene
+
 var animation_tween : Tween
+signal animation_finished
 
 func _ready() -> void:
 	pressed.connect(_button_press)
@@ -27,6 +31,9 @@ func _button_press():
 	animation_tween = create_tween().set_trans(Tween.TRANS_SINE)
 	animation_tween.tween_property(self, "scale", press_scale, press_animation_length_1)
 	animation_tween.chain().tween_property(self,"scale", hover_scale, press_animation_length_2)
+	await animation_tween.finished
+	print("animation_finished")
+	animation_finished.emit()
 	pass
 
 func _button_hover():
