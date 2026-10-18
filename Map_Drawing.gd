@@ -33,6 +33,11 @@ func _input(event):
 					#print("Left button was released")
 					
 					drawing = false
+					
+			if event.button_index == MOUSE_BUTTON_RIGHT:
+				if event.pressed:
+					img.fill(Color.TRANSPARENT)
+					img_texture.update(img)
 		
 		elif event is InputEventMouseMotion:
 			#print("Mouse Motion at: ", get_local_mouse_position())
