@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d1mceujuoakl6" path="res://NPCBoat.tscn" id="7_4ls13"]
 [ext_resource type="PackedScene" uid="uid://c0i40kue36cdh" path="res://Scenes/Port.tscn" id="8_vw57k"]
 [ext_resource type="PackedScene" uid="uid://cj21y76mwbekf" path="res://MapUI.tscn" id="9_4jpbd"]
+[ext_resource type="Script" uid="uid://c3cif0nrq6a42" path="res://game_manager.gd" id="10_8grns"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
 size = Vector2(150, 150)
@@ -61,3 +62,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.891226, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.538172, 2.1782618, 15.690294)
 
 [node name="Control" parent="." unique_id=1769657988 instance=ExtResource("9_4jpbd")]
+
+[node name="GameManager" type="Node3D" parent="." unique_id=2115212441]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 16.891224, 1.911108, -13.2054615)
+script = ExtResource("10_8grns")

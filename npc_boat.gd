@@ -1,3 +1,4 @@
+class_name NPCBoat
 extends CharacterBody3D
 
 @export var bob_time = 0.0
@@ -14,8 +15,12 @@ var current_speed = 0.0
 var following : bool = false
 var porting : bool = false
 
+var home_port_id : int
+
 var player : PlayerBoat
 var port : Port
+
+signal home_now
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,6 +45,7 @@ func _process(delta: float) -> void:
 		if abs(global_position.distance_to(port.Frontussy.global_position)) > 2:
 			current_speed = move_toward(current_speed, max_speed, acceleration*delta)
 		else:
+			home_now.emit()
 			queue_free()
 		velocity = global_position.direction_to(port.Frontussy.global_position) * current_speed
 		
