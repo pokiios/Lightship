@@ -107,7 +107,7 @@ transform = Transform3D(0.97130024, 0, -0.23785332, 0, 1, 0, 0.23785332, 0, 0.97
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 49.49204, 0, -18.993996)
 
 [node name="tiny castle" type="Marker3D" parent="GameManager" unique_id=1131022226]
-transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.9999996, -53.69017, 0, 10.67106)
+transform = Transform3D(0.9999994, 0, 0, 0, 1, 0, 0, 0, 0.9999994, -55.44451, 0, 15.03355)
 
 [node name="windmills" type="Marker3D" parent="GameManager" unique_id=484961450]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 5.3497295, 0, 79.185555)

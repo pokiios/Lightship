@@ -88,11 +88,11 @@ func _process(delta: float) -> void:
 
 func spawn_boat(spawn_pos, home_port_id):
 	current_npc = npc_scene.instantiate()
+	get_parent().add_child(current_npc)
+
 	current_npc.global_position = spawn_pos.global_position
 	current_npc.home_port_id = home_port_id
-	current_npc
 	current_npc.home_now.connect(on_current_boat_home)
-	get_parent().add_child(current_npc)
 	
 func on_current_boat_home():
 	timer_for_dialogue.start(randi_range(5,10))

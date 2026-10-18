@@ -132,75 +132,76 @@ func dialog_tree(dialog_progression: int):
 			%Name.text = "Millermen"
 			%Dialog.text = "It’s been hard to navigate to any of the ports nearby so some assistance would be well appreciated."
 			pass
-		23:
+		24:
 			dialog_end()
 			pass
-		24:
+		25:
 			%Name.text = "Fishsquire"
 			%Dialog.text = "Hey… I ended up a little distracted by these really… really pretty merladies… I have no idea where I am to be honest?"
 			pass
-		25: 
+		26: 
 			%Name.text = "Fishsquire"
 			%Dialog.text = "I think there’s some kind of really beat up [i]castle[/i] opposite me? [i]A lot of water[/i] surrounding me as well…"
 			pass
-		26:
+		27:
 			dialog_end()
 			pass
-		27:
-			%Name.text = "Filobena-Anne Schkrungle"
-			%Dialog.text = "Oh thank goodness you responded!"
 		28:
 			%Name.text = "Filobena-Anne Schkrungle"
-			%Dialog.text = "The customer service for these waters is absolutely ridiculous!"
+			%Dialog.text = "Oh thank goodness you responded!"
 		29:
 			%Name.text = "Filobena-Anne Schkrungle"
-			%Dialog.text = "I’ve been stuck at this bridge for 10 minutes now and nobody has come to get me!"
+			%Dialog.text = "The customer service for these waters is absolutely ridiculous!"
 		30:
 			%Name.text = "Filobena-Anne Schkrungle"
-			%Dialog.text = "You better be fast or I’ll be speaking to your supervisor!"
+			%Dialog.text = "I’ve been stuck at this bridge for 10 minutes now and nobody has come to get me!"
 		31:
-			dialog_end()
-			pass
+			%Name.text = "Filobena-Anne Schkrungle"
+			%Dialog.text = "You better be fast or I’ll be speaking to your supervisor!"
 		32:
-			%Name.text = "Gariana Andy"
-			%Dialog.text = "Heeeeyyyyy~ So I think there’s some weird guy on the [i]trash island[/i] east of the beach."
+			dialog_end()
 			pass
 		33:
 			%Name.text = "Gariana Andy"
-			%Dialog.text = "I think he might be… stuck? He seems to be enjoying himself though."
+			%Dialog.text = "Heeeeyyyyy~ So I think there’s some weird guy on the [i]trash island[/i] east of the beach."
 			pass
 		34:
 			%Name.text = "Gariana Andy"
-			%Dialog.text = "He’s calling himself the king of the trash island?"
+			%Dialog.text = "I think he might be… stuck? He seems to be enjoying himself though."
 			pass
 		35:
 			%Name.text = "Gariana Andy"
-			%Dialog.text = "He’s like super loud."
+			%Dialog.text = "He’s calling himself the king of the trash island?"
 			pass
 		36:
 			%Name.text = "Gariana Andy"
-			%Dialog.text = "Like..."
+			%Dialog.text = "He’s like super loud."
 			pass
 		37:
 			%Name.text = "Gariana Andy"
-			%Dialog.text = "[i][b]Super Loud.[/b][/i]"
+			%Dialog.text = "Like..."
 			pass
 		38:
 			%Name.text = "Gariana Andy"
-			%Dialog.text = "We had no idea what to do so like..."
+			%Dialog.text = "[i][b]Super Loud.[/b][/i]"
 			pass
 		39:
 			%Name.text = "Gariana Andy"
-			%Dialog.text = "Can you like help or something?"
+			%Dialog.text = "We had no idea what to do so like..."
 			pass
 		40:
 			%Name.text = "Gariana Andy"
-			%Dialog.text = "K'thanks byeeeee~"
+			%Dialog.text = "Can you like help or something?"
 			pass
 		41:
+			%Name.text = "Gariana Andy"
+			%Dialog.text = "K'thanks byeeeee~"
+			pass
+		42:
 			dialog_end()
 		_:
-			pass
+			%Name.text = "Big Beautiful bouncin baby boy"
+			%Dialog.text = " NO MORE GAME NOW BYE ! "
 	scroll_text()
 	pass
 
