@@ -67,7 +67,9 @@ func _on_notice_zone_area_entered(area: Area3D) -> void:
 		following = true
 		player = area.get_parent()
 	elif area.get_parent() is Port:
-		following = false
-		porting = true
-		port = area.get_parent()
+		var porty := area.get_parent() as Port 
+		if porty.port_id == home_port_id:
+			following = false
+			porting = true
+			port = area.get_parent()
 	pass # Replace with function body.

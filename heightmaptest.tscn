@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c0i40kue36cdh" path="res://Scenes/Port.tscn" id="8_vw57k"]
 [ext_resource type="PackedScene" uid="uid://cj21y76mwbekf" path="res://MapUI.tscn" id="9_4jpbd"]
 [ext_resource type="Script" uid="uid://c3cif0nrq6a42" path="res://game_manager.gd" id="10_8grns"]
+[ext_resource type="PackedScene" uid="uid://cxxarlc7mcuyo" path="res://Scenes/dialog_box.tscn" id="11_fw5vh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
 size = Vector2(150, 150)
@@ -54,6 +55,7 @@ volumetric_fog_density = 0.0225
 volumetric_fog_albedo = Color(0.5057441, 0.66646725, 0.9829193, 1)
 
 [node name="Node3D" type="Node3D" unique_id=580111024]
+process_mode = 1
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=419485767]
@@ -72,17 +74,55 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.731611, 
 
 [node name="Water" parent="." unique_id=1503518473 instance=ExtResource("5_0pu5e")]
 
-[node name="NPCBoat" parent="." unique_id=1250631048 instance=ExtResource("7_4ls13")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.891226, 1.911108, -13.205462)
-
 [node name="Port" parent="." unique_id=1086956238 instance=ExtResource("8_vw57k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.538172, 2.1782618, 15.690294)
+transform = Transform3D(0.36019593, 0, -0.9328764, 0, 1, 0, 0.9328764, 0, 0.36019593, -57.77124, 2.1782618, -7.834221)
+
+[node name="Port2" parent="." unique_id=1088932291 instance=ExtResource("8_vw57k")]
+transform = Transform3D(0.28790072, 0, 0.9576598, 0, 1, 0, -0.9576598, 0, 0.28790072, -9.26642, 2.1782618, 60.98453)
+port_id = 1
+
+[node name="Port3" parent="." unique_id=1280460005 instance=ExtResource("8_vw57k")]
+transform = Transform3D(0.46942195, 0, -0.88297325, 0, 1, 0, 0.88297325, 0, 0.46942195, -12.973603, 2.1782618, -57.785378)
+port_id = 2
+
+[node name="Port4" parent="." unique_id=1706109250 instance=ExtResource("8_vw57k")]
+transform = Transform3D(-0.5991755, 0, -0.8006172, 0, 1, 0, 0.8006172, 0, -0.5991755, 35.549725, 2.1782618, -46.080822)
+port_id = 3
 
 [node name="Control" parent="." unique_id=1769657988 instance=ExtResource("9_4jpbd")]
+process_mode = 3
 
-[node name="GameManager" type="Node3D" parent="." unique_id=2115212441]
+[node name="GameManager" type="Node3D" parent="." unique_id=2115212441 node_paths=PackedStringArray("spawn_positions")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 16.891224, 1.911108, -13.2054615)
 script = ExtResource("10_8grns")
+spawn_positions = [NodePath("chip"), NodePath("manatee"), NodePath("tiny castle"), NodePath("windmills"), NodePath("foy"), NodePath("toilet"), NodePath("trash"), NodePath("big castle")]
+home_port_ids = Array[int]([2, 1, 1, 2, 0, 3, 0, 3])
+dialog_ids = Array[int]([6, 10, 17, 20, 23, 28])
+npc_scene = ExtResource("7_4ls13")
+
+[node name="chip" type="Marker3D" parent="GameManager" unique_id=1521569592]
+transform = Transform3D(0.97130024, 0, -0.23785332, 0, 1, 0, 0.23785332, 0, 0.97130024, 21.402142, 0, -13.93797)
+
+[node name="manatee" type="Marker3D" parent="GameManager" unique_id=1504532458]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 49.49204, 0, -18.993996)
+
+[node name="tiny castle" type="Marker3D" parent="GameManager" unique_id=1131022226]
+transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.9999996, -53.69017, 0, 10.67106)
+
+[node name="windmills" type="Marker3D" parent="GameManager" unique_id=484961450]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 5.3497295, 0, 79.185555)
+
+[node name="foy" type="Marker3D" parent="GameManager" unique_id=1417888619]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -5.7855997, 0, 58.10673)
+
+[node name="toilet" type="Marker3D" parent="GameManager" unique_id=1040833074]
+transform = Transform3D(0.99999946, 0, 0, 0, 1, 0, 0, 0, 0.99999946, -14.129346, 0, -36.755535)
+
+[node name="trash" type="Marker3D" parent="GameManager" unique_id=886299431]
+transform = Transform3D(0.9713003, 0, -0.23785333, 0, 1, 0, 0.23785333, 0, 0.9713003, 0.46994972, 0, 19.754185)
+
+[node name="big castle" type="Marker3D" parent="GameManager" unique_id=1453333427]
+transform = Transform3D(0.9713002, 0, -0.2378533, 0, 1, 0, 0.2378533, 0, 0.9713002, 40.254215, 0, 59.49869)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=604758968]
 environment = SubResource("Environment_fw5vh")
@@ -94,3 +134,10 @@ light_energy = 2.291
 light_volumetric_fog_energy = 1.662
 shadow_enabled = true
 directional_shadow_mode = 0
+
+[node name="Dialog Box" parent="." unique_id=1960741140 instance=ExtResource("11_fw5vh")]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="Node3D" type="Node3D" parent="." unique_id=688406703]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 16.891222, 1.911108, -13.205461)
