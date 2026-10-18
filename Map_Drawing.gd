@@ -6,6 +6,9 @@ var img_texture: ImageTexture
 var mouse_on_map: bool = false
 var drawing : bool = false
 
+var prev_pos : Vector2
+var current_pos : Vector2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -14,7 +17,7 @@ func _ready() -> void:
 	
 	img_texture = ImageTexture.create_from_image(img)
 	texture = img_texture
-	Input.use_accumulated_input = false
+	#Input.use_accumulated_input = false
 	pass # Replace with function body.
 
 func _input(event):
@@ -35,9 +38,16 @@ func _input(event):
 			#print("Mouse Motion at: ", get_local_mouse_position())
 			if drawing:
 				paint_at(get_local_mouse_position().x, get_local_mouse_position().y, Color(0.01, 0.0, 0.215, 1.0))
-			
-		
-
+				
+				current_pos = get_local_mouse_position()
+				if (prev_pos != null or prev_pos != Vector2(-1,-1)) and prev_pos.distance_to(current_pos) >= 5:
+					for i in range(1,49):
+					
+						var LerpPos = lerp(prev_pos, current_pos, i/50)
+						paint_at(LerpPos.x, LerpPos.y,Color(0.01, 0.0, 0.215, 1.0))
+				prev_pos = current_pos
+			else:
+				prev_pos = Vector2(-1,-1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -47,10 +57,13 @@ func _process(delta: float) -> void:
 	
 func paint_at(x: int, y: int, color: Color):
 	if x >= 0 and x < img.get_width() and y >= 0 and y < img.get_height():
-		for i in range(-3,3):
-			for j in range(-3,3):
-				
-				img.set_pixel(x+i, y+j , color)
+		for i in range(-10,10):
+			for j in range(-10,10):
+				if i != 0 and j !=0:
+					img.set_pixel(x+i, y+j , Color(color.r, color.g, color.b, (color.a/2 + (color.a/2)/abs(i))))
+				else:
+					img.set_pixel(x+i, y+j ,color)
+
 		# Update the texture with the modified image
 		img_texture.update(img)
 
