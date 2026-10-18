@@ -37,14 +37,14 @@ func _input(event):
 		elif event is InputEventMouseMotion:
 			#print("Mouse Motion at: ", get_local_mouse_position())
 			if drawing:
-				paint_at(get_local_mouse_position().x, get_local_mouse_position().y, Color(0.01, 0.0, 0.215, 1.0))
+				paint_at(get_local_mouse_position().x, get_local_mouse_position().y, Color(0.611, 0.0, 0.238, 1.0))
 				
 				current_pos = get_local_mouse_position()
-				if (prev_pos != null or prev_pos != Vector2(-1,-1)) and prev_pos.distance_to(current_pos) >= 5:
+				if (prev_pos != null or prev_pos) and prev_pos.distance_to(current_pos) >= 5:
 					for i in range(1,49):
 					
 						var LerpPos = lerp(prev_pos, current_pos, i/50)
-						paint_at(LerpPos.x, LerpPos.y,Color(0.01, 0.0, 0.215, 1.0))
+						paint_at(LerpPos.x, LerpPos.y,Color(0.611, 0.0, 0.238, 1.0))
 				prev_pos = current_pos
 			else:
 				prev_pos = Vector2(-1,-1)
@@ -57,13 +57,10 @@ func _process(delta: float) -> void:
 	
 func paint_at(x: int, y: int, color: Color):
 	if x >= 0 and x < img.get_width() and y >= 0 and y < img.get_height():
-		for i in range(-10,10):
-			for j in range(-10,10):
-				if i != 0 and j !=0:
-					img.set_pixel(x+i, y+j , Color(color.r, color.g, color.b, (color.a/2 + (color.a/2)/abs(i))))
-				else:
-					img.set_pixel(x+i, y+j ,color)
-
+		for i in range(-3,3):
+			for j in range(-3,3):
+				
+				img.set_pixel(x+i, y+j , color)
 		# Update the texture with the modified image
 		img_texture.update(img)
 
