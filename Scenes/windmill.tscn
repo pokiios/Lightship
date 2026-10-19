@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://conjk6prtn1di"]
+
+[ext_resource type="Script" uid="uid://c4th7yaoauxut" path="res://Scripts/windmill.gd" id="1_4pnj6"]
+[ext_resource type="PackedScene" uid="uid://bbvllvm25bfhm" path="res://Assets/Models/windmillBody.fbx" id="2_ou8i4"]
+[ext_resource type="PackedScene" uid="uid://b2kqb2mynhtdv" path="res://Assets/Models/windmillBlades.fbx" id="3_2o0fi"]
+
+[node name="Windmill" type="Node3D" unique_id=608913825]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_4pnj6")
+
+[node name="windmillBody" parent="." unique_id=902630826 instance=ExtResource("2_ou8i4")]
+
+[node name="blades" type="Node3D" parent="." unique_id=685581169]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 1, 0.05297959, 3, 0)
+
+[node name="windmillBlades" parent="blades" unique_id=80991605 instance=ExtResource("3_2o0fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)

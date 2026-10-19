@@ -67,3 +67,4 @@ Map={
 
 rendering_device/driver="OpenGL"
 rendering_device/driver.windows="d3d12"
+gl_compatibility/driver="Vulkan"

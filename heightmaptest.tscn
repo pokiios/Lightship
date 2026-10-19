@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mbx4h0vdsx7b" path="res://Scenes/water test.tscn" id="5_0pu5e"]
 [ext_resource type="PackedScene" uid="uid://rrbbbl2framv" path="res://Scenes/PlayerBoat.tscn" id="5_2o1cc"]
 [ext_resource type="PackedScene" uid="uid://d1mceujuoakl6" path="res://NPCBoat.tscn" id="7_4ls13"]
+[ext_resource type="PackedScene" uid="uid://dmhrhbwlk8nhi" path="res://Assets/Models/potapottyFBX.fbx" id="8_3jpnl"]
 [ext_resource type="PackedScene" uid="uid://c0i40kue36cdh" path="res://Scenes/Port.tscn" id="8_vw57k"]
 [ext_resource type="PackedScene" uid="uid://cj21y76mwbekf" path="res://MapUI.tscn" id="9_4jpbd"]
 [ext_resource type="Script" uid="uid://c3cif0nrq6a42" path="res://game_manager.gd" id="10_8grns"]
@@ -16,6 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://cty65mysgshl3" path="res://Assets/Models/chippy.fbx" id="13_uad05"]
 [ext_resource type="PackedScene" uid="uid://b6gypawt6fpkj" path="res://Assets/Models/ManitChoir.fbx" id="14_xdyyh"]
 [ext_resource type="PackedScene" uid="uid://1bhcymerln3l" path="res://Assets/Models/bridgeFinal.fbx" id="15_sgcfk"]
+[ext_resource type="PackedScene" uid="uid://cvr5lbqmwebam" path="res://Assets/Models/Castle02.fbx" id="17_xdyyh"]
+[ext_resource type="PackedScene" uid="uid://conjk6prtn1di" path="res://Scenes/windmill.tscn" id="18_sgcfk"]
+[ext_resource type="PackedScene" uid="uid://cisduc2wdpb2f" path="res://Assets/Models/TrahIslandFBX.fbx" id="20_dhkjq"]
+[ext_resource type="PackedScene" uid="uid://ba335jkh2gy5b" path="res://Assets/Models/shipwreck.fbx" id="21_umw2j"]
+[ext_resource type="PackedScene" uid="uid://t24kqpmgv6e2" path="res://Assets/Models/Castel03.fbx" id="22_cybhr"]
+[ext_resource type="PackedScene" uid="uid://bpuepkpmr8fbi" path="res://Assets/Models/fountianOfYouthFinal.fbx" id="23_5h6ct"]
+[ext_resource type="PackedScene" uid="uid://b5ubqej4c3e2y" path="res://Assets/Models/mermaids01.fbx" id="24_0yfgx"]
+[ext_resource type="PackedScene" uid="uid://dqo38cf7ywbpb" path="res://Assets/Models/Castel01.fbx" id="25_1jv6e"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
 size = Vector2(150, 150)
@@ -84,17 +93,52 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.731611, 
 [node name="Port" parent="." unique_id=1086956238 instance=ExtResource("8_vw57k")]
 transform = Transform3D(0.36019588, 0, -0.9328763, 0, 1, 0, 0.9328763, 0, 0.36019588, -57.771233, 1.9768558, -7.83422)
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="Port" unique_id=224025769]
+transform = Transform3D(-0.3601964, 0, -0.93287706, 0, 1, 0, 0.93287706, 0, -0.3601964, 1.7783108, 1.3850317, -0.0912323)
+light_color = Color(1, 0.70980394, 0.60784316, 1)
+shadow_enabled = true
+shadow_opacity = 0.55
+shadow_blur = 8.426
+omni_range = 2.383
+
 [node name="Port2" parent="." unique_id=1088932291 instance=ExtResource("8_vw57k")]
 transform = Transform3D(0.28790072, 0, 0.9576598, 0, 1, 0, -0.9576598, 0, 0.28790072, -9.26642, 2.1782618, 60.98453)
 port_id = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Port2" unique_id=308592206]
+transform = Transform3D(-0.2879009, 0, 0.95766073, 0, 1, 0, -0.95766073, 0, -0.2879009, 1.8550453, 1.2771144, -0.1739006)
+light_color = Color(1, 0.70980394, 0.60784316, 1)
+shadow_enabled = true
+shadow_opacity = 0.55
+shadow_blur = 8.426
+omni_range = 2.383
 
 [node name="Port3" parent="." unique_id=1280460005 instance=ExtResource("8_vw57k")]
 transform = Transform3D(0.61142004, 0, -0.79130465, 0, 1, 0, 0.79130465, 0, 0.61142004, -15.990966, 2.0814276, -57.235146)
 port_id = 2
 
+[node name="OmniLight3D3" type="OmniLight3D" parent="Port3" unique_id=593439614]
+transform = Transform3D(-0.6114217, 0, -0.7913066, 0, 1, 0, 0.7913066, 0, -0.6114217, 1.6814141, 1.3427, -0.1959343)
+light_color = Color(1, 0.70980394, 0.60784316, 1)
+shadow_enabled = true
+shadow_opacity = 0.55
+shadow_blur = 8.426
+omni_range = 2.383
+
 [node name="Port4" parent="." unique_id=1706109250 instance=ExtResource("8_vw57k")]
 transform = Transform3D(-0.100755066, 0, -0.9949104, 0, 1, 0, 0.9949104, 0, -0.100755066, 33.94656, 2.118743, -45.631104)
 port_id = 3
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Port4" unique_id=1150111524]
+transform = Transform3D(0.10075512, 0, -0.99491215, 0, 1, 0, 0.99491215, 0, 0.10075512, 1.8669746, 1.2029696, -0.1890692)
+light_color = Color(1, 0.70980394, 0.60784316, 1)
+shadow_enabled = true
+shadow_opacity = 0.55
+shadow_blur = 8.426
+omni_range = 2.383
+
+[node name="potapottyFBX" parent="Port4" unique_id=514445523 instance=ExtResource("8_3jpnl")]
+transform = Transform3D(-0.8149688, 0, 0.5795063, 0, 1, 0, -0.5795063, 0, -0.8149688, -1.2540615, 0.5491121, 33.94731)
 
 [node name="Control" parent="." unique_id=1769657988 instance=ExtResource("9_4jpbd")]
 process_mode = 3
@@ -199,3 +243,33 @@ transform = Transform3D(-0.16068229, 0.2370733, 0.9581104, 0.11605599, 0.9685291
 
 [node name="beachItemsFBX3" parent="." unique_id=582119535 instance=ExtResource("13_p7n7a")]
 transform = Transform3D(0.25986525, 0.26685145, 0.9280401, 0.0005266536, 0.96101904, -0.2764816, -0.96564376, 0.07233687, 0.2495949, -24.97262, 2.4682052, 18.467718)
+
+[node name="Castle02" parent="." unique_id=1128620527 instance=ExtResource("17_xdyyh")]
+transform = Transform3D(0.88850194, 0, 0.4588721, 0.020260299, 0.9990248, -0.039229482, -0.45842463, 0.04415238, 0.88763547, -33.251907, 2.1411886, -10.856329)
+
+[node name="Windmill" parent="." unique_id=608913825 instance=ExtResource("18_sgcfk")]
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 24.962027, 2.277158, 67.91198)
+
+[node name="Windmill2" parent="." unique_id=1119704922 instance=ExtResource("18_sgcfk")]
+transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -0.9999999, 28.629883, 2.277158, 67.91197)
+
+[node name="Windmill3" parent="." unique_id=948416497 instance=ExtResource("18_sgcfk")]
+transform = Transform3D(-0.99999964, 0, 8.7422734e-08, 0, 1, 0, -8.7422734e-08, 0, -0.99999964, 26.636486, 2.277158, 66.41936)
+
+[node name="TrahIslandFBX" parent="." unique_id=430211346 instance=ExtResource("20_dhkjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.52162, 2.1072643, 1.7825611)
+
+[node name="shipwreck" parent="." unique_id=821446244 instance=ExtResource("21_umw2j")]
+transform = Transform3D(0.9347802, 0, 0.35522673, 0, 1, 0, -0.35522673, 0, 0.9347802, 61.71353, 1.9644685, 10.609941)
+
+[node name="Castel03" parent="." unique_id=66967219 instance=ExtResource("22_cybhr")]
+transform = Transform3D(-0.8515021, -0.124463886, -0.5093649, -7.450581e-09, 0.97141993, -0.23736753, 0.52435106, -0.20211896, -0.82716626, 66.23853, 3.2256665, 48.7525)
+
+[node name="fountianOfYouthFinal" parent="." unique_id=2042700 instance=ExtResource("23_5h6ct")]
+transform = Transform3D(0.6025323, -0.20914587, -0.77020305, -7.450581e-09, 0.9650525, -0.26205653, 0.79809445, 0.15789755, 0.5814753, 19.895561, 3.3012633, 45.93445)
+
+[node name="mermaids01" parent="." unique_id=1595564487 instance=ExtResource("24_0yfgx")]
+transform = Transform3D(-0.71918017, 0, 0.69482356, 0, 1, 0, -0.69482356, 0, -0.71918017, 25.321756, 2.5472808, 22.781462)
+
+[node name="Castel01" parent="." unique_id=1268682831 instance=ExtResource("25_1jv6e")]
+transform = Transform3D(1, 0, 0, 0, 0.9788681, -0.20449255, 0, 0.20449255, 0.9788681, 68.22619, 2.6507883, -51.31644)
