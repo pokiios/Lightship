@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bs76n0v847054"]
+
+[ext_resource type="Script" uid="uid://llr8fer0ywat" path="res://Scripts/audio_manager.gd" id="1_2nh25"]
+[ext_resource type="AudioStream" uid="uid://cfrkheyytpe4w" path="res://Assets/Audio/SFX/Wave_Crashing_Ambience_Seamless.wav" id="2_d16gy"]
+[ext_resource type="AudioStream" uid="uid://e15wan1hkyjp" path="res://Assets/Audio/SFX/SFX_Ship_Horn.wav" id="3_er85w"]
+[ext_resource type="AudioStream" uid="uid://dfamebln3n1ef" path="res://Assets/Audio/SFX/SFX_Ship_Bell.wav" id="4_sxe6l"]
+[ext_resource type="AudioStream" uid="uid://catk5d6o8bwjl" path="res://Audio/MUSIC_Game_Music.ogg" id="5_mh7xs"]
+
+[node name="AudioManager" type="Node" unique_id=1896118965 node_paths=PackedStringArray("clips")]
+process_mode = 3
+script = ExtResource("1_2nh25")
+clips = NodePath("Clips")
+
+[node name="Clips" type="Node" parent="." unique_id=1522594527]
+
+[node name="Ambience" type="AudioStreamPlayer3D" parent="Clips" unique_id=851572458]
+stream = ExtResource("2_d16gy")
+
+[node name="Horn" type="AudioStreamPlayer3D" parent="Clips" unique_id=675806931]
+stream = ExtResource("3_er85w")
+volume_db = 5.0
+
+[node name="Bell" type="AudioStreamPlayer3D" parent="Clips" unique_id=1074663933]
+stream = ExtResource("4_sxe6l")
+
+[node name="Main" type="AudioStreamPlayer3D" parent="Clips" unique_id=483955605]
+stream = ExtResource("5_mh7xs")
+volume_db = -5.0

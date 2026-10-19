@@ -19,6 +19,10 @@ var current_speed = 0.0
 
 @onready var Booty = $BootyOfTheBoat
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Horn"):
+		AudioManager.play("Horn")
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

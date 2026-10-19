@@ -47,6 +47,7 @@ func _process(delta: float) -> void:
 			current_speed = move_toward(current_speed, max_speed, acceleration*delta)
 		else:
 			home_now.emit()
+			AudioManager.play("Bell")
 			queue_free()
 		velocity = global_position.direction_to(port.Frontussy.global_position) * current_speed
 		

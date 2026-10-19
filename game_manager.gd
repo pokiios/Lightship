@@ -34,6 +34,7 @@ func _ready() -> void:
 	self.add_child(timer_for_dialogue)
 	timer_for_dialogue.one_shot = true
 	timer_for_dialogue.timeout.connect(new_radio_message)
+	AudioManager.play("Ambience")
 	
 	%"Dialog Box".tut_wasd.connect(tut_test_wasd)
 	%"Dialog Box".tut_map.connect(tut_test_map)
@@ -46,14 +47,14 @@ func _ready() -> void:
 	timer_for_tut_delay.one_shot = true
 	timer_for_tut_delay.start(3)
 	
-
+	AudioManager.play("Main", 0, false)
 	
 	pass # Replace with function body.
 
 func _input(event: InputEvent) -> void:
-	if event.keycode == KEY_0:
-		%"Dialog Box".dialog_progression = 63
-		new_radio_message()
+	#if event.keycode == KEY_0:
+		#%"Dialog Box".dialog_progression = 63
+		#new_radio_message()
 		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
