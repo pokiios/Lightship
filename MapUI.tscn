@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cj21y76mwbekf"]
 
 [ext_resource type="Script" uid="uid://be57ry65x46f1" path="res://map_ui.gd" id="1_v40sx"]
-[ext_resource type="Texture2D" uid="uid://b2j6j3v821kqb" path="res://map texture.png" id="2_cdl4w"]
+[ext_resource type="Texture2D" uid="uid://tiw8qrsw2wyn" path="res://map texture with ports.png" id="2_cdl4w"]
 [ext_resource type="Script" uid="uid://briykdbvgm5lh" path="res://Map_Drawing.gd" id="3_cdl4w"]
 
 [sub_resource type="Theme" id="Theme_s1hdg"]
@@ -41,13 +41,6 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/FoldableContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=938853310]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/FoldableContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1991219254]
-layout_mode = 2
-text = "Last Radio Message"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/FoldableContainer/HBoxContainer" unique_id=683575197]
 custom_maximum_size = Vector2(500, 500)

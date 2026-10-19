@@ -51,12 +51,6 @@ func _ready() -> void:
 	
 	pass # Replace with function body.
 
-func _input(event: InputEvent) -> void:
-	#if event.keycode == KEY_0:
-		#%"Dialog Box".dialog_progression = 63
-		#new_radio_message()
-		pass
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not tut_don_bay:
@@ -109,6 +103,7 @@ func on_current_boat_home():
 func on_picked_up():
 	%"Dialog Box".dialog_progression += 1
 	%"Dialog Box".open_dialog_screen()
+	current_npc.picked_up.disconnect()
 
 func new_radio_message():
 #her is where the code for new dialogue go

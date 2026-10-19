@@ -13,6 +13,7 @@ config_version=5
 config/name="Light Ship"
 run/main_scene="uid://iipicip4nqj"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/image="uid://bjic2rlktl10y"
 config/icon="res://icon.svg"
 
 [autoload]

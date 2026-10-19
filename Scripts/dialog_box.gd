@@ -300,6 +300,9 @@ func dialog_tree(dialog_progression: int):
 			pass
 		69:
 			total_dialog_end.emit()
+			dialog_end()
+		70:
+			total_dialog_end.emit()
 		_:
 			%Name.text = "Big Beautiful bouncin baby boy"
 			%Dialog.text = " NO MORE GAME NOW BYE ! "

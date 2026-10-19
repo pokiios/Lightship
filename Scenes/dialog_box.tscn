@@ -36,7 +36,7 @@ size_flags_vertical = 4
 theme = ExtResource("1_sqs0f")
 script = ExtResource("2_ccvmi")
 character_time = 0.2
-dialog_bleeps_counter = 5
+dialog_bleeps_counter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1235269978]
 layout_mode = 1
@@ -77,7 +77,7 @@ alignment = 1
 
 [node name="Timer" type="Timer" parent="MarginContainer/TextureRect/MarginContainer2/VBoxContainer" unique_id=194282549]
 unique_name_in_owner = true
-wait_time = 0.00999999999999999
+wait_time = 0.05
 autostart = true
 
 [node name="Name" type="Label" parent="MarginContainer/TextureRect/MarginContainer2/VBoxContainer" unique_id=417377196]
