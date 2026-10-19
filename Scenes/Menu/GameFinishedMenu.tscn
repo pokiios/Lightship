@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://cdgswyb62si11"]
+
+[ext_resource type="Theme" uid="uid://bt6x6kyoco414" path="res://Assets/UI/dialog_theme.tres" id="1_cr15x"]
+[ext_resource type="Script" uid="uid://6yeo4alf8o4" path="res://Scripts/main_menu.gd" id="2_ko7cn"]
+[ext_resource type="PackedScene" uid="uid://iipicip4nqj" path="res://Scenes/Menu/Main Menu.tscn" id="3_ytltq"]
+[ext_resource type="Texture2D" uid="uid://d2s75q8qin68s" path="res://Assets/TITLE_Lightship.png" id="4_bgi04"]
+[ext_resource type="Script" uid="uid://4piig8wh0nvb" path="res://Scripts/animated_button.gd" id="5_8fstl"]
+[ext_resource type="PackedScene" uid="uid://dspdcto3e7j4x" path="res://Scenes/Environment/GameFinished.tscn" id="6_ytltq"]
+
+[node name="MainMenu" type="Control" unique_id=913901516]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_cr15x")
+script = ExtResource("2_ko7cn")
+scene = ExtResource("3_ytltq")
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=346256327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1987898658]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1764406528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.648403, 4.360706, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1490562580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=514828403]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=225607163]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_bgi04")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1497633873]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[wave][rainbow]You managed to help everyone![/rainbow][/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=546244776]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=128334193]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "                     "
+script = ExtResource("5_8fstl")
+play_states = "PLAY"
+metadata/_custom_type_script = "uid://4piig8wh0nvb"
+
+[node name="PlayBtnText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayButton" unique_id=621435793]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.14901961, 0.11764706, 0.06666667, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave]Main Menu[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=754174692]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1496209880]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "                     "
+script = ExtResource("5_8fstl")
+play_states = "QUIT"
+metadata/_custom_type_script = "uid://4piig8wh0nvb"
+
+[node name="QuitBtnText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/QuitButton" unique_id=981465605]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.14901961, 0.11764706, 0.06666667, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave amp=30 freq=5]Quit[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node3D" parent="." unique_id=580111024 instance=ExtResource("6_ytltq")]
+
+[connection signal="animation_finished" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_animation_finished"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="animation_finished" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_animation_finished"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -131,6 +131,5 @@ func tut_test_done():
 	timer_for_dialogue.start(randi_range(5,10))
 	
 func Game_Over():
-	#TODO: Please put the scene switch to game over screen here please thank you leah
-	
+	get_tree().change_scene_to_file("res://Scenes/Menu/GameFinishedMenu.tscn")
 	pass
