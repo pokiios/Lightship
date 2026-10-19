@@ -103,16 +103,18 @@ func on_current_boat_home():
 func on_picked_up():
 	%"Dialog Box".dialog_progression += 1
 	%"Dialog Box".open_dialog_screen()
-	current_npc.picked_up.disconnect()
+	current_npc.picked_up.disconnect(on_picked_up)
 
 func new_radio_message():
 #her is where the code for new dialogue go
 	%"Dialog Box".dialog_progression += 1
 	%"Dialog Box".open_dialog_screen()
 	#then spawn boat
-	spawn_boat(spawn_positions[current_index], home_port_ids[current_index])
-	
-	current_index += 1
+	if !%"Dialog Box".final_boat:
+		spawn_boat(spawn_positions[current_index], home_port_ids[current_index])	
+		current_index += 1
+	else:
+		Game_Over()
 	pass
 	
 func on_tut_start():

@@ -6,6 +6,7 @@ extends Control
 var dialog_progression: int
 var can_continue_dialog : bool = false
 var characters_to_count : int = 0
+var final_boat : bool = false
 @export var dialog_bleeps_counter : int = 3
 
 signal tut_wasd
@@ -299,10 +300,8 @@ func dialog_tree(dialog_progression: int):
 			%Dialog.text = "Aye you found us lad! We just need tae get back tae [b]Port Smokey[/b] and we’re sorted!"
 			pass
 		69:
-			total_dialog_end.emit()
 			dialog_end()
-		70:
-			total_dialog_end.emit()
+			final_boat = true
 		_:
 			%Name.text = "Big Beautiful bouncin baby boy"
 			%Dialog.text = " NO MORE GAME NOW BYE ! "
