@@ -50,6 +50,11 @@ func _ready() -> void:
 	
 	pass # Replace with function body.
 
+func _input(event: InputEvent) -> void:
+	if event.keycode == KEY_0:
+		%"Dialog Box".dialog_progression = 63
+		new_radio_message()
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -131,5 +136,10 @@ func tut_test_done():
 	timer_for_dialogue.start(randi_range(5,10))
 	
 func Game_Over():
+	var end_timer := Timer.new()
+	end_timer.one_shot = true
+	add_child(end_timer)
+	end_timer.start()
+	await end_timer.timeout
 	get_tree().change_scene_to_file("res://Scenes/Menu/GameFinishedMenu.tscn")
 	pass

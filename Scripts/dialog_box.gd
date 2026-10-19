@@ -31,10 +31,10 @@ func _input(event: InputEvent) -> void:
 			dialog_progression += 1
 			open_dialog_screen()
 			pass
-		if event.keycode == KEY_0:
-			dialog_progression = 28
-			open_dialog_screen()
-			pass
+		#if event.keycode == KEY_0:
+			#dialog_progression = 58
+			#open_dialog_screen()
+			#pass
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -266,7 +266,7 @@ func dialog_tree(dialog_progression: int):
 			pass
 		60:
 			%Name.text = "King of Trash Island"
-			%Dialog.text = "[tornado]Who told you you can disturb me here at my domicile! This is a free gaff![/tornado]"
+			%Dialog.text = "[wave]Who told you you can disturb me here at my domicile! This is a free gaff![/wave]"
 			pass
 		61:
 			%Name.text = "King of Trash Island"
