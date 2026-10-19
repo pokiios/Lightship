@@ -65,4 +65,5 @@ Map={
 
 [rendering]
 
+rendering_device/driver="OpenGL"
 rendering_device/driver.windows="d3d12"

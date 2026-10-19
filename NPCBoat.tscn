@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d1mceujuoakl6"]
 
 [ext_resource type="Script" uid="uid://c7kewjn2p2trv" path="res://npc_boat.gd" id="1_gbvon"]
+[ext_resource type="PackedScene" uid="uid://tij3xk37jqcs" path="res://Assets/Models/Fisherboat.fbx" id="2_2rtdd"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_s1hdg"]
 
@@ -18,6 +19,7 @@ script = ExtResource("1_gbvon")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=134593161]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 rotation_order = 5
+visible = false
 mesh = SubResource("CylinderMesh_s1hdg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1524734975]
@@ -35,5 +37,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("SphereShape3D_s1hdg")
 debug_color = Color(0.15686275, 0.64705884, 0, 0.7882353)
+
+[node name="Fisherboat" parent="." unique_id=992634460 instance=ExtResource("2_2rtdd")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.2653697, 0)
 
 [connection signal="area_entered" from="NoticeZone" to="." method="_on_notice_zone_area_entered"]

@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 	bob_time += delta * bob_speed
 	#var bob_intensity = lerp(bob_amount, bob_amount*0.3, speed_ratio)
 	
-	$MeshInstance3D.rotation.z = sin(bob_time+1) *0.4 # * bob_intensity
+	$Fisherboat.rotation.z = sin(bob_time+1) *0.4 # * bob_intensity
 	
 	move_and_slide()
 	pass

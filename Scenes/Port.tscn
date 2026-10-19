@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0i40kue36cdh"]
 
 [ext_resource type="Script" uid="uid://cso3a2lu31o1j" path="res://Scenes/port.gd" id="1_gk6tx"]
+[ext_resource type="PackedScene" uid="uid://l8fq1rmr0uri" path="res://Assets/Models/Port.fbx" id="2_v2pda"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_s1hdg"]
 
@@ -17,6 +18,7 @@ script = ExtResource("1_gk6tx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1860325072]
 transform = Transform3D(2.9445076, 0, 0, 0, 0.92773455, 0, 0, 0, 1.4850206, 0, 0.6114975, 0)
+visible = false
 mesh = SubResource("BoxMesh_s1hdg")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=203621613]
@@ -33,4 +35,8 @@ shape = SubResource("BoxShape3D_ns0st")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6983128, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FrontussyOfThePort" unique_id=146709920]
+visible = false
 mesh = SubResource("SphereMesh_s1hdg")
+
+[node name="Port" parent="." unique_id=926944611 instance=ExtResource("2_v2pda")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.21391594, 0.38886297, -0.5741906)

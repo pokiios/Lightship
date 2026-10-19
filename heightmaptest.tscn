@@ -12,6 +12,10 @@
 [ext_resource type="Script" uid="uid://c3cif0nrq6a42" path="res://game_manager.gd" id="10_8grns"]
 [ext_resource type="PackedScene" uid="uid://cxxarlc7mcuyo" path="res://Scenes/dialog_box.tscn" id="11_fw5vh"]
 [ext_resource type="PackedScene" uid="uid://babwtek1mlcpi" path="res://FogWall.tscn" id="12_421wi"]
+[ext_resource type="PackedScene" uid="uid://bqh44m2yavaas" path="res://Assets/Models/beachItemsFBX.fbx" id="13_p7n7a"]
+[ext_resource type="PackedScene" uid="uid://cty65mysgshl3" path="res://Assets/Models/chippy.fbx" id="13_uad05"]
+[ext_resource type="PackedScene" uid="uid://b6gypawt6fpkj" path="res://Assets/Models/ManitChoir.fbx" id="14_xdyyh"]
+[ext_resource type="PackedScene" uid="uid://1bhcymerln3l" path="res://Assets/Models/bridgeFinal.fbx" id="15_sgcfk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1hdg"]
 size = Vector2(150, 150)
@@ -78,18 +82,18 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.731611, 
 [node name="Water" parent="." unique_id=1503518473 instance=ExtResource("5_0pu5e")]
 
 [node name="Port" parent="." unique_id=1086956238 instance=ExtResource("8_vw57k")]
-transform = Transform3D(0.36019593, 0, -0.9328764, 0, 1, 0, 0.9328764, 0, 0.36019593, -57.77124, 2.1782618, -7.834221)
+transform = Transform3D(0.36019588, 0, -0.9328763, 0, 1, 0, 0.9328763, 0, 0.36019588, -57.771233, 1.9768558, -7.83422)
 
 [node name="Port2" parent="." unique_id=1088932291 instance=ExtResource("8_vw57k")]
 transform = Transform3D(0.28790072, 0, 0.9576598, 0, 1, 0, -0.9576598, 0, 0.28790072, -9.26642, 2.1782618, 60.98453)
 port_id = 1
 
 [node name="Port3" parent="." unique_id=1280460005 instance=ExtResource("8_vw57k")]
-transform = Transform3D(0.46942195, 0, -0.88297325, 0, 1, 0, 0.88297325, 0, 0.46942195, -12.973603, 2.1782618, -57.785378)
+transform = Transform3D(0.61142004, 0, -0.79130465, 0, 1, 0, 0.79130465, 0, 0.61142004, -15.990966, 2.0814276, -57.235146)
 port_id = 2
 
 [node name="Port4" parent="." unique_id=1706109250 instance=ExtResource("8_vw57k")]
-transform = Transform3D(-0.5991755, 0, -0.8006172, 0, 1, 0, 0.8006172, 0, -0.5991755, 35.549725, 2.1782618, -46.080822)
+transform = Transform3D(-0.100755066, 0, -0.9949104, 0, 1, 0, 0.9949104, 0, -0.100755066, 33.94656, 2.118743, -45.631104)
 port_id = 3
 
 [node name="Control" parent="." unique_id=1769657988 instance=ExtResource("9_4jpbd")]
@@ -177,3 +181,21 @@ transform = Transform3D(-4.3711346e-08, 0, -0.9999992, 0, 1, 0, 0.9999992, 0, -4
 
 [node name="Node3D5" parent="." unique_id=38509295 instance=ExtResource("12_421wi")]
 transform = Transform3D(-4.371135e-08, 0, -0.99999917, 0, 1, 0, 0.99999917, 0, -4.371135e-08, -97.73974, 14.208427, 9.2498865)
+
+[node name="chippy" parent="." unique_id=1834655661 instance=ExtResource("13_uad05")]
+transform = Transform3D(0.99065804, 9.2693636e-10, -0.1363643, -0.0014301436, 0.99994504, -0.010389693, 0.1363568, 0.010487667, 0.99060357, 34.768154, 3.2942243, -34.115833)
+
+[node name="ManitChoir" parent="." unique_id=285944053 instance=ExtResource("14_xdyyh")]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 66.49692, 1.9860258, -36.65154)
+
+[node name="bridgeFinal" parent="." unique_id=801336763 instance=ExtResource("15_sgcfk")]
+transform = Transform3D(0.9004017, 0, -0.7997986, 0, 1, 0, 1.1996977, 0, 0.6002677, -29.360168, 1.450558, 46.888317)
+
+[node name="beachItemsFBX" parent="." unique_id=1004220055 instance=ExtResource("13_p7n7a")]
+transform = Transform3D(0.8642543, 0.30899075, 0.3969723, -0.2484284, 0.94834363, -0.19730283, -0.43743053, 0.07190074, 0.8963717, -25.624094, 2.5886912, 19.983894)
+
+[node name="beachItemsFBX2" parent="." unique_id=794276554 instance=ExtResource("13_p7n7a")]
+transform = Transform3D(-0.16068229, 0.2370733, 0.9581104, 0.11605599, 0.96852916, -0.22018753, -0.9801586, 0.075814344, -0.18313925, -26.31851, 2.8266551, 18.08627)
+
+[node name="beachItemsFBX3" parent="." unique_id=582119535 instance=ExtResource("13_p7n7a")]
+transform = Transform3D(0.25986525, 0.26685145, 0.9280401, 0.0005266536, 0.96101904, -0.2764816, -0.96564376, 0.07233687, 0.2495949, -24.97262, 2.4682052, 18.467718)
